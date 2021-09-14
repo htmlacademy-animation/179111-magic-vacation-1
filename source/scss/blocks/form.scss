@@ -1,3 +1,17 @@
+@keyframes GoToWide {
+  0% {
+    transform: scaleX(0);
+    opacity: 0;
+    transform-origin: right;
+  }
+
+  100% {
+    transform: scaleX(1);
+    opacity: 1;
+    transform-origin: right;
+  }
+}
+
 .form {
   position: relative;
   display: flex;
@@ -43,6 +57,8 @@
   border: 0;
   border-radius: 3rem;
   outline: none;
+  animation-name: GoToWide;
+  animation-duration: 0.3s;
 
   &:focus {
     border: 1px solid $c-purple;

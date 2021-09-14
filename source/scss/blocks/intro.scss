@@ -1,3 +1,18 @@
+@keyframes FadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+
+  85% {
+    opacity: 1;
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
 .intro {
   display: flex;
   flex-direction: column;
@@ -93,6 +108,9 @@
   text-transform: uppercase;
   font-size: 2.4rem;
   line-height: 1.27;
+
+  animation-name: FadeIn;
+  animation-duration: 3s;
 
   @media (min-width: $stop-scaling) {
     width: 509px;
