@@ -31,10 +31,18 @@
   position: relative;
   flex: none;
   top: -0.5rem;
+  left: -1rem;
+  opacity: 0;
   display: block;
   padding: 1rem 0;
   width: 10rem;
   color: $c-light;
+  transition: all 0.3s $on-load-timing-function;
+
+  .js-load-complete & {
+    left: 0;
+    opacity: 1;
+  }
 
   @media (min-width: $stop-scaling) {
     top: -5px;
@@ -130,6 +138,12 @@
 .page-header__nav {
   display: flex;
   align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s $on-load-timing-function;
+
+  .js-load-complete & {
+    opacity: 1;
+  }
 
   @media (max-width: $tablet) and (orientation: portrait) {
     position: fixed;
@@ -267,9 +281,12 @@
     }
 
     &.active {
-      &::after {
-        display: block;
-        width: 100%;
+      .js-load-complete & {
+        &::after {
+          left: 0;
+          display: block;
+          width: 100%;
+        }
       }
     }
 
