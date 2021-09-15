@@ -1,3 +1,19 @@
+$SlideStartDelay: 0.3;
+$SlideAnimationDuration: 0.9;
+$ItemOpacityDealy: $SlideStartDelay + $SlideAnimationDuration;
+
+@keyframes SlideToRight {
+  0% {
+    opacity: 0;
+    transform: translateX(4rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 .slider {
   position: relative;
   flex-grow: 1;
@@ -18,6 +34,16 @@
   flex-direction: column;
   padding: 14.6rem 4rem 10rem 9.7rem;
   height: auto;
+  opacity: 0;
+  transition: opacity 0s $ItemOpacityDealy + s;
+
+  &.swiper-slide-active,
+  &.swiper-slide-next {
+    animation-name: SlideToRight;
+    animation-duration: $SlideAnimationDuration + s;
+    animation-delay: $SlideStartDelay + s;
+    opacity: 1;
+  }
 
   @media (min-width: $stop-scaling) {
     padding: 146px 40px 100px 97px;

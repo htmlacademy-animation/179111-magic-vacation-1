@@ -53,6 +53,10 @@
     "source/img/**/*.svg",
     "source/sass/**/*.{sass,scss}"
   ],
+  "engines": {
+    "node": ">=16.9.0",
+    "npm": ">=7.0.0"
+  },
   "dependencies": {
     "normalize.css": "8.0.1",
     "swiper": "5.3.8",

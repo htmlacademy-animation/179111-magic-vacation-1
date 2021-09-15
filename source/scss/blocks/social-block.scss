@@ -5,7 +5,41 @@
     .social-block__list {
       opacity: 1;
       pointer-events: auto;
+
+      li {
+        opacity: 1;
+        transition: opacity 0.3s linear;
+      }
+
+      li:nth-child(1),
+      li:nth-child(1) .social-block__link {
+        transition-delay: 0.1s;
+      }
+
+      li:nth-child(2),
+      li:nth-child(2) .social-block__link {
+        transition-delay: 0.2s;
+      }
+
+      li:nth-child(3),
+      li:nth-child(3) .social-block__link {
+        transition-delay: 0.3s;
+      }
+
+      .social-block__link {
+        transform: rotateY(0);
+      }
     }
+  }
+
+  // для заливки вложенного SVG, где fill указан как currentColor
+  &--active .social-block__toggler:not(:hover) {
+    color: $c-light;
+  }
+
+  &--active .social-block__toggler:not(:hover)::before {
+    background-color: $c-purple;
+    border-color: $c-purple;
   }
 }
 
@@ -17,6 +51,7 @@
   height: 4rem;
   color: $c-dark;
   border-radius: 50%;
+  transition: color 0.3s linear;
 
   @media (max-width: $tablet) and (orientation: portrait) {
     display: none;
@@ -35,6 +70,9 @@
     background-color: $c-light;
     border: 2px solid $c-light;
     z-index: -1;
+    transition:
+      height 0.3s linear,
+      width 0.3s linear;
   }
 
   svg {
@@ -44,10 +82,7 @@
     height: 2.2rem;
   }
 
-  &:hover,
-  .social-block--active & {
-    color: $c-purple;
-
+  &:hover {
     &::before {
       width: 112.5%;
       height: 112.5%;
@@ -145,6 +180,8 @@
   li {
     flex: none;
     margin-bottom: 0.5rem;
+    overflow: hidden;
+    opacity: 0;
 
     @media (min-width: $stop-scaling) {
       margin-bottom: 5px;
@@ -168,6 +205,10 @@
   color: $c-light;
   border: 2px solid transparent;
   border-radius: 50%;
+  transform: translateY(1.5rem);
+  transition:
+    transform 0.3s ease-out,
+    color 0.3s ease-out;
 
   @media (min-width: $stop-scaling) {
     width: 40px;
