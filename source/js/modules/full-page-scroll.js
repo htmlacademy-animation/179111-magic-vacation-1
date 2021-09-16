@@ -1,4 +1,5 @@
 import throttle from 'lodash/throttle';
+import backgroundScreen from './history-prize-background';
 
 export default class FullPageScroll {
   constructor() {
@@ -8,6 +9,7 @@ export default class FullPageScroll {
     this.menuElements = document.querySelectorAll(`.page-header__menu .js-menu-link`);
 
     this.activeScreen = 0;
+    this.prevActiveScreen = 0;
     this.onScrollHandler = this.onScroll.bind(this);
     this.onUrlHashChengedHandler = this.onUrlHashChanged.bind(this);
   }
@@ -17,6 +19,18 @@ export default class FullPageScroll {
     window.addEventListener(`popstate`, this.onUrlHashChengedHandler);
 
     this.onUrlHashChanged();
+    // preventDefault понадобился, т.к. при клике по ссылке отрисовывался .animation-screen, судя по дебаггеру дело как будто в swiper
+    this.menuElements.forEach((link) => {
+      link.addEventListener(`click`, (e) => {
+        if (link.dataset.href === `prizes` && this.screenElements[this.activeScreen].id === `story`) {
+          e.preventDefault();
+          backgroundScreen.enable();
+          setTimeout(() => {
+            window.location.href = link.href;
+          }, 300);
+        }
+      });
+    });
   }
 
   onScroll(evt) {
@@ -29,6 +43,7 @@ export default class FullPageScroll {
 
   onUrlHashChanged() {
     const newIndex = Array.from(this.screenElements).findIndex((screen) => location.hash.slice(1) === screen.id);
+    this.prevActiveScreen = this.activeScreen;
     this.activeScreen = (newIndex < 0) ? 0 : newIndex;
     this.changePageDisplay();
   }
@@ -39,13 +54,31 @@ export default class FullPageScroll {
     this.emitChangeDisplayEvent();
   }
 
-  changeVisibilityDisplay() {
+  hideAllScreens() {
     this.screenElements.forEach((screen) => {
       screen.classList.add(`screen--hidden`);
       screen.classList.remove(`active`);
     });
+  }
+
+  showActiveScreen() {
     this.screenElements[this.activeScreen].classList.remove(`screen--hidden`);
     this.screenElements[this.activeScreen].classList.add(`active`);
+  }
+
+  changeVisibilityDisplay() {
+    const {id: prev} = this.screenElements[this.prevActiveScreen];
+    const {id: next} = this.screenElements[this.activeScreen];
+    if (prev === `story` && next === `prizes`) {
+      setTimeout(() => {
+        this.hideAllScreens();
+        this.showActiveScreen();
+        backgroundScreen.disable();
+      }, 300);
+    } else {
+      this.hideAllScreens();
+      this.showActiveScreen();
+    }
   }
 
   changeActiveMenuItem() {
