@@ -19,18 +19,6 @@ export default class FullPageScroll {
     window.addEventListener(`popstate`, this.onUrlHashChengedHandler);
 
     this.onUrlHashChanged();
-    // preventDefault понадобился, т.к. при клике по ссылке отрисовывался .animation-screen, судя по дебаггеру дело как будто в swiper
-    this.menuElements.forEach((link) => {
-      link.addEventListener(`click`, (e) => {
-        if (link.dataset.href === `prizes` && this.screenElements[this.activeScreen].id === `story`) {
-          e.preventDefault();
-          backgroundScreen.enable();
-          setTimeout(() => {
-            window.location.href = link.href;
-          }, 300);
-        }
-      });
-    });
   }
 
   onScroll(evt) {
@@ -70,11 +58,12 @@ export default class FullPageScroll {
     const {id: prev} = this.screenElements[this.prevActiveScreen];
     const {id: next} = this.screenElements[this.activeScreen];
     if (prev === `story` && next === `prizes`) {
+      backgroundScreen.enable();
       setTimeout(() => {
         this.hideAllScreens();
         this.showActiveScreen();
         backgroundScreen.disable();
-      }, 300);
+      }, 600);
     } else {
       this.hideAllScreens();
       this.showActiveScreen();
