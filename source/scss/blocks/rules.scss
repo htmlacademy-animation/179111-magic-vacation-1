@@ -159,6 +159,10 @@
     border-radius: 50%;
     line-height: 5rem;
     text-align: center;
+    animation-name: bounceIn, fadeInCurrentColor;
+    animation-duration: 0.35s, 0.15s;
+    animation-fill-mode: backwards, backwards;
+    animation-timing-function: cubic-bezier(0.4, 0.2, 0.6, 1.5);
 
     @media (max-width: $tablet) and (orientation: portrait) {
       top: 1rem;
@@ -177,12 +181,47 @@
     }
   }
 
+  &:nth-child(1)::before {
+    animation-delay: 0s, 0.1s;
+  }
+
+  &:nth-child(2)::before {
+    animation-delay: 0.175s, 0.275s;
+  }
+
+  &:nth-child(3)::before {
+    animation-delay: 0.35s, 0.45s;
+  }
+
+  &:nth-child(4)::before {
+    animation-delay: 0.525s, 0.625s;
+  }
+
   p {
     margin: 0;
+    animation-name: fadeInRight;
+    animation-duration: 0.7s;
+    animation-fill-mode: backwards;
 
     @media (max-width: $tablet) and (orientation: portrait) {
       min-height: calc(1.4rem * 2.2);
     }
+  }
+
+  &:nth-child(1) p {
+    animation-delay: 0s;
+  }
+
+  &:nth-child(2) p {
+    animation-delay: 0.175s;
+  }
+
+  &:nth-child(3) p {
+    animation-delay: 0.35s;
+  }
+
+  &:nth-child(4) p {
+    animation-delay: 0.525s;
   }
 }
 
@@ -190,6 +229,10 @@
   position: absolute;
   bottom: 6rem;
   right: 5.6rem;
+  animation-name: expansion4RemTo18Rem, fadeInTransparentToDarkColor;
+  animation-duration: 0.2s, 0.1s;
+  animation-delay: 0s, 0.1s;
+  animation-fill-mode: backwards, both;
 
   @media (min-width: $stop-scaling) {
     bottom: 60px;
