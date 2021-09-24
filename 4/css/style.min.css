@@ -3152,7 +3152,7 @@ img {
   content: counter(li);
   counter-increment: li;
   position: absolute;
-  top: 0;
+  top: 0.25rem;
   left: 0;
   width: 4.5rem;
   height: 4.5rem;
@@ -3199,6 +3199,8 @@ img {
   animation-delay: 0.525s, 0.625s;
 }
 .rules__item p {
+  position: relative;
+  top: 0.25rem;
   margin: 0;
   animation-name: fadeInRight;
   animation-duration: 0.7s;
