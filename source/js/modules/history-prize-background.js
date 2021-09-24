@@ -1,16 +1,22 @@
 class BackgroundScreen {
-  constructor(node) {
-    this.__node = node;
+  constructor() {
+    this.screenBackground = document.querySelector(`.screen-background`);
+    this.screenFooter = document.querySelector(`.screen--prizes .screen__footer`);
   }
   enable() {
-    this.__node.classList.add(`screen-background--active`);
+    this.screenBackground.classList.add(`screen-background--active`);
   }
   disable() {
-    this.__node.classList.remove(`screen-background--active`);
+    this.screenBackground.classList.remove(`screen-background--active`);
+    this.screenFooter.animate([
+      {transform: `translateY(100%)`},
+      {transform: `translateY(0)`}
+    ], {
+      duration: 300
+    });
   }
 }
 
-const backgroundScreenElement = document.querySelector(`.screen-background`);
-const backgroundScreen = new BackgroundScreen(backgroundScreenElement);
+const backgroundScreen = new BackgroundScreen();
 
 export default backgroundScreen;

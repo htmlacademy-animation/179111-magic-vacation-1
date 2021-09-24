@@ -1,3 +1,5 @@
+// ========== Переиспользуемые анимации ==========
+
 // FADES
 @keyframes fadeIn {
   from {
@@ -21,6 +23,16 @@
   }
 }
 
+@keyframes fadeInCurrentColor {
+  from {
+    color: transparent;
+  }
+
+  to {
+    color: currentColor;
+  }
+}
+
 // SLIDES
 @keyframes slideInUp2rem {
   from {
@@ -40,5 +52,43 @@
 
   100% {
     width: 100%;
+  }
+}
+
+// BOUNCE
+@keyframes bounceIn {
+  from {
+    opacity: 0;
+    transform: scale(0.1, 0.1);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1, 1);
+  }
+}
+
+// ========== Уникальные анимации ==========
+// Кнопка "Погнали" в "Правилах" - размер
+@keyframes expansion4RemTo18Rem {
+  from {
+    opacity: 0;
+    width: 4rem;
+  }
+
+  to {
+    opacity: 1;
+    width: 18rem;
+  }
+}
+
+// Кнопка "Погнали" в "Правилах" - цвет текста
+@keyframes fadeInTransparentToDarkColor {
+  from {
+    color: transparent;
+  }
+
+  to {
+    color: $c-dark;
   }
 }
