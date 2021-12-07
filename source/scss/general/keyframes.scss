@@ -92,3 +92,100 @@
     color: $c-dark;
   }
 }
+
+// Акцентная типографика
+@keyframes fadeIn--letters {
+  to {
+    transform: translate3d(0, 0.1em, 0);
+  }
+}
+
+// Экран победа - чемодан, листок, фламинго
+@keyframes fadeIn--leafBlue1 {
+  0% {
+    transform: translate3d(20%, -50%, 0) rotate(-40deg);
+  }
+
+  50% {
+    transform: translate3d(20%, -25%, 0) rotate(20deg);
+  }
+
+  75% {
+    transform: translate3d(20%, -35%, 0) rotate(-5deg);
+  }
+
+  100% {
+    transform: translate3d(20%, -25%, 0) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn--leafBlue2 {
+  0% {
+    transform: translate3d(-110%, -20%, 0) rotate(40deg);
+  }
+
+  50% {
+    transform: translate3d(-110%, 30%, 0) rotate(-20deg);
+  }
+
+  75% {
+    transform: translate3d(-110%, 15%, 0) rotate(5deg);
+  }
+
+  100% {
+    transform: translate3d(-110%, 20%, 0) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn--leafGreen {
+  0% {
+    transform: translate3d(15%, 20%, 0) rotate(-40deg);
+  }
+
+  25% {
+    transform: translate3d(15%, 50%, 0) rotate(20deg);
+  }
+
+  100% {
+    transform: translate3d(15%, 20%, 0) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn--suitcase {
+  0% {
+    transform: translate3d(-50%, 100%, 0) scale(0);
+  }
+
+  100% {
+    transform: translate3d(-50%, -20%, 0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn--flamingo {
+  0% {
+    transform: translate3d(-80%, 100%, 0);
+  }
+
+  100% {
+    transform: translate3d(-80%, 0, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes bounce--flamingo {
+  0% {
+    transform: translate3d(-80%, 0, 0) rotate(0);
+  }
+
+  50% {
+    transform: translate3d(-80%, 5%, 0) rotate(5deg);
+  }
+
+  100% {
+    transform: translate3d(-80%, 0, 0) rotate(0);
+  }
+}

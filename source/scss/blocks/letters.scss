@@ -1,0 +1,16 @@
+.letters {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative;
+
+  &__item {
+    display: inline-block;
+    transform: translate3d(0, 1em, 0);
+
+    .js-load-complete & {
+      animation-name: fadeIn--letters;
+      animation-fill-mode: forwards;
+    }
+  }
+}

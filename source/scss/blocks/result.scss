@@ -39,18 +39,63 @@
     right: -1rem;
   }
 
-  picture {
-    display: block;
-    width: 100%;
-    height: 100%;
+}
+
+.result__image-item {
+  position: absolute;
+  display: block;
+  left: 50%;
+  top: 50%;
+  opacity: 0;
+
+  &--flamingo {
+    width: 320px;
+    .js-load-complete & {
+      animation:
+        fadeIn--flamingo 0.75s ease-in-out 0.15s forwards,
+        bounce--flamingo 4s ease-in-out 1s infinite;
+    }
   }
 
-  img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
+  &--suitcase {
+    width: 300px;
+    .js-load-complete & {
+      animation-name: fadeIn--suitcase;
+      animation-duration: 0.75s;
+      animation-fill-mode: forwards;
+      animation-timing-function: cubic-bezier(0.75, 0.75, 0.75, 1.15);
+    }
+  }
+
+  &--leaf-green {
+    width: 300px;
+    .js-load-complete & {
+      animation-name: fadeIn--leafGreen;
+      animation-duration: 2.5ms;
+      animation-fill-mode: forwards;
+      animation-timing-function: ease-in-out;
+    }
+  }
+
+  &--leaf-blue-1 {
+    width: 320px;
+    .js-load-complete & {
+      animation-name: fadeIn--leafBlue1;
+      animation-duration: 2.2s;
+      animation-delay: 0.15s;
+      animation-fill-mode: forwards;
+      animation-timing-function: ease-in-out;
+    }
+  }
+
+  &--leaf-blue-2 {
+    width: 320px;
+    .js-load-complete & {
+      animation-name: fadeIn--leafBlue2;
+      animation-duration: 2s;
+      animation-fill-mode: forwards;
+      animation-timing-function: ease-in-out;
+    }
   }
 }
 
