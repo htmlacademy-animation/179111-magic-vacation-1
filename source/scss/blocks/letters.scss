@@ -9,7 +9,7 @@
     transform: translate3d(0, 1em, 0);
 
     .js-load-complete & {
-      animation-name: fadeIn--letters;
+      animation-name: fadeInLetters;
       animation-fill-mode: forwards;
     }
   }

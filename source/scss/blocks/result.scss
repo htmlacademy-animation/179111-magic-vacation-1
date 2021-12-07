@@ -52,15 +52,15 @@
     width: 320px;
     .js-load-complete & {
       animation:
-        fadeIn--flamingo 0.75s ease-in-out 0.15s forwards,
-        bounce--flamingo 4s ease-in-out 1s infinite;
+        fadeInFlamingo 0.75s ease-in-out 0.15s forwards,
+        bounceFlamingo 4s ease-in-out 1s infinite;
     }
   }
 
   &--suitcase {
     width: 300px;
     .js-load-complete & {
-      animation-name: fadeIn--suitcase;
+      animation-name: fadeInSuitcase;
       animation-duration: 0.75s;
       animation-fill-mode: forwards;
       animation-timing-function: cubic-bezier(0.75, 0.75, 0.75, 1.15);
@@ -70,7 +70,7 @@
   &--leaf-green {
     width: 300px;
     .js-load-complete & {
-      animation-name: fadeIn--leafGreen;
+      animation-name: fadeInLeafGreen;
       animation-duration: 2.5ms;
       animation-fill-mode: forwards;
       animation-timing-function: ease-in-out;
@@ -80,7 +80,7 @@
   &--leaf-blue-1 {
     width: 320px;
     .js-load-complete & {
-      animation-name: fadeIn--leafBlue1;
+      animation-name: fadeInLeafBlue1;
       animation-duration: 2.2s;
       animation-delay: 0.15s;
       animation-fill-mode: forwards;
@@ -91,7 +91,7 @@
   &--leaf-blue-2 {
     width: 320px;
     .js-load-complete & {
-      animation-name: fadeIn--leafBlue2;
+      animation-name: fadeInLeafBlue2;
       animation-duration: 2s;
       animation-fill-mode: forwards;
       animation-timing-function: ease-in-out;
