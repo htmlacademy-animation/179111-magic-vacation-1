@@ -302,6 +302,30 @@
         opacity: 1;
         background-color: $c-purple;
       }
+      .theme-light-blue & {
+        color: $c-blue-light;
+        &::after {
+          background-color: $c-blue-light;
+        }
+      }
+      .theme-blue & {
+        color: $c-blue;
+        &::after {
+          background-color: $c-blue;
+        }
+      }
+      .theme-dark & {
+        color: $c-dark;
+        &::after {
+          background-color: $c-dark;
+        }
+      }
+      .theme-purple & {
+        color: $c-purple;
+        &::after {
+          background-color: $c-purple;
+        }
+      }
     }
   }
 }
