@@ -24,7 +24,12 @@
 }
 
 .intro__title {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+
   margin: 0;
+  overflow: hidden;
   max-width: 99rem;
   text-transform: uppercase;
   font-family: $font-alt;
