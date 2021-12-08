@@ -40,6 +40,22 @@
   &--active .social-block__toggler:not(:hover)::before {
     background-color: $c-purple;
     border-color: $c-purple;
+    .theme-light-blue & {
+      background-color: $c-blue;
+      border-color: $c-blue;
+    }
+    .theme-blue & {
+      background-color: $c-blue-light;
+      border-color: $c-blue-light;
+    }
+    .theme-dark & {
+      background-color: $c-purple;
+      border-color: $c-purple;
+    }
+    .theme-purple & {
+      background-color: $c-dark;
+      border-color: $c-dark;
+    }
   }
 }
 
@@ -53,6 +69,18 @@
   border-radius: 50%;
   transition: color 0.3s linear;
 
+  .theme-light-blue & {
+    color: $c-blue-light;
+  }
+  .theme-blue & {
+    color: $c-blue;
+  }
+  .theme-dark & {
+    color: $c-dark;
+  }
+  .theme-purple & {
+    color: $c-purple;
+  }
   @media (max-width: $tablet) and (orientation: portrait) {
     display: none;
   }
@@ -111,7 +139,30 @@
   &:active,
   &:active:focus {
     color: $c-light;
-
+    .theme-light-blue & {
+      &::before {
+        background-color: $c-blue-light;
+        border-color: $c-blue-light;
+      }
+    }
+    .theme-blue & {
+      &::before {
+        background-color: $c-blue;
+        border-color: $c-blue;
+      }
+    }
+    .theme-dark & {
+      &::before {
+        background-color: $c-dark;
+        border-color: $c-dark;
+      }
+    }
+    .theme-purple & {
+      &::before {
+        background-color: $c-purple;
+        border-color: $c-purple;
+      }
+    }
     &::before {
       width: 100%;
       height: 100%;
@@ -232,6 +283,18 @@
 
   &:hover {
     color: $c-purple;
+    .theme-light-blue & {
+      color: $c-blue-light;
+    }
+    .theme-blue & {
+      color: $c-blue;
+    }
+    .theme-dark & {
+      color: $c-dark;
+    }
+    .theme-purple & {
+      color: $c-purple;
+    }
   }
 
   &:focus {

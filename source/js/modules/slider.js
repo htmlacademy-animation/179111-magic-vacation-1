@@ -5,6 +5,13 @@ export default () => {
   let sliderContainer = document.getElementById(`story`);
   sliderContainer.style.backgroundImage = `url("img/slide1.jpg"), linear-gradient(180deg, rgba(83, 65, 118, 0) 0%, #523E75 16.85%)`;
 
+  const themes = {
+    blue: `theme-blue`,
+    lightBlue: `theme-light-blue`,
+    purple: `theme-purple`,
+    dark: `theme-dark`
+  };
+
   const setSlider = function () {
     if (((window.innerWidth / window.innerHeight) < 1) || window.innerWidth < 769) {
       storySlider = new Swiper(`.js-slider`, {
@@ -51,14 +58,19 @@ export default () => {
         },
         on: {
           slideChange: () => {
+            Object.values(themes).forEach((theme) => document.body.classList.remove(theme));
             if (storySlider.activeIndex === 0) {
               sliderContainer.style.backgroundImage = `url("img/slide1.jpg")`;
+              document.body.classList.add(themes.purple);
             } else if (storySlider.activeIndex === 2) {
               sliderContainer.style.backgroundImage = `url("img/slide2.jpg")`;
+              document.body.classList.add(themes.lightBlue);
             } else if (storySlider.activeIndex === 4) {
               sliderContainer.style.backgroundImage = `url("img/slide3.jpg")`;
+              document.body.classList.add(themes.blue);
             } else if (storySlider.activeIndex === 6) {
               sliderContainer.style.backgroundImage = `url("img/slide4.jpg")`;
+              document.body.classList.add(themes.dark);
             }
           },
           resize: () => {

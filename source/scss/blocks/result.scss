@@ -58,7 +58,7 @@
   }
 
   &--suitcase {
-    width: 300px;
+    width: 22rem;
     .js-load-complete & {
       animation-name: fadeInSuitcase;
       animation-duration: 0.75s;
@@ -68,7 +68,7 @@
   }
 
   &--leaf-green {
-    width: 300px;
+    width: 22rem;
     .js-load-complete & {
       animation-name: fadeInLeafGreen;
       animation-duration: 2.5ms;
@@ -78,7 +78,7 @@
   }
 
   &--leaf-blue-1 {
-    width: 320px;
+    width: 24rem;
     .js-load-complete & {
       animation-name: fadeInLeafBlue1;
       animation-duration: 2.2s;
@@ -89,7 +89,7 @@
   }
 
   &--leaf-blue-2 {
-    width: 320px;
+    width: 24rem;
     .js-load-complete & {
       animation-name: fadeInLeafBlue2;
       animation-duration: 2s;
@@ -161,6 +161,12 @@
   line-height: 1.2;
   color: $c-light;
 
+  .js-load-complete & {
+    animation-name: fadeIn;
+    animation-duration: 0.6s;
+    animation-timing-function: ease-in;
+  }
+
   @media (min-width: $stop-scaling) {
     margin: auto auto 10px;
     min-width: 340px;
@@ -192,6 +198,12 @@
     width: 4rem;
     height: 4rem;
     color: $c-dark;
+
+    .js-load-complete & {
+      animation-name: fadeInRight;
+      animation-duration: 0.6s;
+      animation-timing-function: ease-in;
+    }
 
     @media (min-width: $stop-scaling) {
       margin-left: 15px;
