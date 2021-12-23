@@ -104,6 +104,7 @@
   }
 }
 
+// @to-do: скорректировать после SMIL-анимации
 .prizes__item {
   margin-left: 7.5rem;
 
@@ -165,6 +166,14 @@
 
   &--cases {
     margin-left: 7rem;
+
+    .js-load-complete & {
+      animation-name: fadeIn;
+      animation-duration: 0.9s;
+      animation-delay: 0.3s;
+      animation-timing-function: ease-in;
+      animation-fill-mode: backwards;
+    }
 
     @media (min-width: $stop-scaling) {
       margin-left: 70px;
