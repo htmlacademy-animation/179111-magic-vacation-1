@@ -133,6 +133,13 @@
       bottom: -1.4rem;
       width: 26.8rem;
 
+      .js-load-complete & {
+        animation-name: fadeIn;
+        animation-duration: 0.8s;
+        animation-timing-function: ease-in;
+        animation-fill-mode: backwards;
+      }
+
       @media (min-width: $stop-scaling) {
         left: -59px;
         bottom: -14px;
