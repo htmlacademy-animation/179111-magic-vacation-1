@@ -114,7 +114,8 @@
   left: 0;
   z-index: 100;
   opacity: 0.5;
-  display: none;
+  // !NB временнное отображение вердиктов игры
+  // display: none;
 }
 
 .game__button {
