@@ -14,6 +14,7 @@ export default () => {
         });
         targetEl[0].classList.add(`screen--show`);
         targetEl[0].classList.remove(`screen--hidden`);
+        animateResultText(targetEl[0]);
       });
     }
 
@@ -29,4 +30,25 @@ export default () => {
       });
     }
   }
+
+  //
+  const animateStrokeDasharray = (letter, length) => {
+    const animateSVGTag = document.createElementNS(`http://www.w3.org/2000/svg`, `animate`);
+    [
+      {name: `attributeName`, value: `stroke-dasharray`},
+      {name: `begin`, value: `300ms`},
+      {name: `to`, value: `${length}, 0`},
+      {name: `dur`, value: `600ms`},
+      {name: `fill`, value: `freeze`}
+    ].forEach(({name, value}) => animateSVGTag.setAttribute(name, value));
+    letter.appendChild(animateSVGTag);
+  };
+
+  const animateResultText = (element) => {
+    element.querySelectorAll(`.svg-result-text path`).forEach((letter) => {
+      const length = letter.getTotalLength() / 3;
+      letter.setAttribute(`stroke-dasharray`, `0, ${length}`);
+      animateStrokeDasharray(letter, length);
+    });
+  };
 };
