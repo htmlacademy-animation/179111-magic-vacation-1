@@ -9,6 +9,7 @@ import form from './modules/form.js';
 import social from './modules/social.js';
 import FullPageScroll from './modules/full-page-scroll';
 import textSplitter from './modules/text-splitter';
+import counter from './modules/counter';
 
 // init modules
 mobileHeight();
@@ -19,6 +20,7 @@ chat();
 result();
 form();
 social();
+counter(5);
 
 // Анимация акцентной типографики
 const animationOptions = {
@@ -27,8 +29,7 @@ const animationOptions = {
   'slider__item-title': {duration: `600`, delay: `250`},
   'prizes__title': {duration: `600`, delay: `250`},
   'rules__title': {duration: `600`, delay: `250`},
-  'game__title': {duration: `600`, delay: `250`},
-  'game__counter': {duration: `600`, delay: `250`},
+  'game__title': {duration: `600`, delay: `250`}
 };
 
 window.addEventListener(`load`, () => {
