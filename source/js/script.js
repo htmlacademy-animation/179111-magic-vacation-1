@@ -10,6 +10,7 @@ import social from './modules/social.js';
 import FullPageScroll from './modules/full-page-scroll';
 import textSplitter from './modules/text-splitter';
 import counter from './modules/counter';
+import prizeCounter from './modules/counter-prizes';
 
 // init modules
 mobileHeight();
@@ -21,6 +22,8 @@ result();
 form();
 social();
 counter(5);
+prizeCounter(`cases`, 1, 7);
+prizeCounter(`codes`, 11, 900);
 
 // Анимация акцентной типографики
 const animationOptions = {
