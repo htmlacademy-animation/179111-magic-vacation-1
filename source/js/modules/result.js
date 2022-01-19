@@ -1,4 +1,5 @@
-import Scene2DSeaCalf from './canvas/animation.js';
+import Scene2DSeaCalf from './canvas/scene-2d-sea-calf.js';
+import SceneFail from './canvas/crocodile';
 
 export default () => {
   let showResultEls = document.querySelectorAll(`.js-show-result`);
@@ -21,6 +22,10 @@ export default () => {
         if (targetEl[0].id === `result`) {
           const sceneCanvasAnimation = new Scene2DSeaCalf();
           sceneCanvasAnimation.beginAnimation();
+        }
+        if (targetEl[0].id === `result3`) {
+          const sceneFailAnimation = new SceneFail();
+          sceneFailAnimation.beginAnimation();
         }
       });
     }
