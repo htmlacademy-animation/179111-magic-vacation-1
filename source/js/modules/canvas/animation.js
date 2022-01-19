@@ -224,6 +224,9 @@ class Scene2D {
   }
 
   drawImage(image, object) {
+    // object.x и object.y - положение изображения в процентах
+    // object.size - похоже, что размер изображения также в процентах
+    // this.size - сторона холста, причем холст всегда квадратный
     let x = object.x;
     let y = object.y;
     let size = object.size;
@@ -238,8 +241,11 @@ class Scene2D {
       return;
     }
 
+    // масштабированная от размеров холста ширина и высота изображения
+    // считаем ширину изображения в процентах от стороны холста (для холста 964 при 15% будет 144px)
     let width = this.size * (size / 100);
-    let height = this.size * (size / 100) * image.height / image.width;
+    // вычисляем соответствующую высоту
+    let height = width * image.height / image.width;
 
     x = this.size * (x / 100) - width / 2;
     y = this.size * (y / 100) - height / 2;
@@ -427,7 +433,7 @@ const OBJECTS = Object.freeze({
     }
   },
 });
-
+// LOCALS, drawBlob, before - след за самолетом
 const LOCALS = Object.freeze({
   blob: {
     centerX: 45,
@@ -454,6 +460,7 @@ export default class Scene2DSeaCalf extends Scene2D {
   }
 
   beginAnimation() {
+    // initLocals и afterInit для следа от самолета
     this.initLocals();
 
     this.afterInit = () => {
